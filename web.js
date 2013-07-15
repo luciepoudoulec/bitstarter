@@ -4,15 +4,9 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 
-var contents =  fs.readFile('index.html','utf8',function(err, data) {
-     if(err) {
-         response.send('unable to load the requested file');
-        }
-    else {
-        response.writeHead(200, {'Content-Type': 'text/html'});
-response.write(data);
+var contents = fs.readFile('./index.html',function(err,data){
+  console.log(data.toString()); //replace console.log with the code to write to the response.
 }
-response.end();
 });
 
 var port = process.env.PORT || 5000;
