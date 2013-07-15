@@ -3,10 +3,13 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-
-var contents = fs.readFile('./index.html',function(err,data){
-  console.log(data.toString()); //replace console.log with the code to write to the response.
-}
+  var fs = require('fs');
+  var fileName = fs.readFileSync('index.html');
+  var buf = new Buffer('fileName');
+  for (var i = 0; i < fileName.length; i++){
+    buf[i] = str.charCodeA(i);
+  }
+  response.send(buf);
 });
 
 var port = process.env.PORT || 5000;
