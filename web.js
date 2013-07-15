@@ -6,7 +6,7 @@ app.get('/', function(request, response) {
   var fileName = fs.readFileSync('index.html');
   var buf = new Buffer('fileName');
   for (var i = 0; i < fileName.length; i++){
-    buf[i] = fineName.charCodeA(i);
+    buf[i] = fileName.charCodeA(i);
   }
   response.send(buf);
 });
