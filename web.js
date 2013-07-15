@@ -1,5 +1,4 @@
 var express = require('express');
-var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
@@ -7,7 +6,7 @@ app.get('/', function(request, response) {
   var fileName = fs.readFileSync('index.html');
   var buf = new Buffer('fileName');
   for (var i = 0; i < fileName.length; i++){
-    buf[i] = str.charCodeA(i);
+    buf[i] = fineName.charCodeA(i);
   }
   response.send(buf);
 });
